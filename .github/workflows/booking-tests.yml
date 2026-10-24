@@ -1,0 +1,16 @@
+name: Booking form tests
+
+on:
+  push:
+    branches: [main, feature/real-booking-email]
+  pull_request:
+
+jobs:
+  booking:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
