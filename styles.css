@@ -72,7 +72,7 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400 }
 
 /* ---------- Hero ---------- */
 .hero {
-  position: relative; min-height: 780px; height: 100svh; max-height: 980px; overflow: hidden;
+  position: relative; min-height: 620px; height: 100svh; max-height: 980px; overflow: hidden;
   background: radial-gradient(circle at 84% 18%, #bd9e7a30, transparent 21%), radial-gradient(circle at 78% 28%, #72566b38, transparent 25%), radial-gradient(circle at 38% 85%, #6a43552b, transparent 29%), var(--night);
 }
 .hero:after { content: ""; position: absolute; inset: auto 0 0; height: 34%; background: linear-gradient(transparent, var(--night)); z-index: 2; pointer-events: none }
@@ -81,39 +81,19 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400 }
 .hero-light { position: absolute; width: 50vw; height: 50vw; right: -8vw; top: -13vw; border-radius: 50%; background: radial-gradient(circle, rgba(229, 223, 240, .18), rgba(229, 223, 240, 0) 66%); mix-blend-mode: screen; animation: lightBreathe 7s ease-in-out infinite }
 
 .hero-subject {
-  position: absolute; z-index: 1; right: 4vw; top: 10vh; width: min(55vw, 770px); height: 79vh; min-height: 560px; overflow: hidden;
-  clip-path: polygon(10% 0, 100% 0, 100% 89%, 0 100%); box-shadow: 0 38px 100px #00000088;
-  animation: subjectIn 1.4s .16s both var(--ease-out);
+  position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; width: min(62vw, 980px); overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 34%), linear-gradient(180deg, #000 70%, transparent 100%);
+  -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0, #000 34%), linear-gradient(180deg, #000 70%, transparent 100%);
+  mask-composite: intersect; animation: subjectIn 1.6s .1s both var(--ease-out);
 }
-.hero-subject img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; filter: saturate(.86) contrast(1.06) brightness(1.04); animation: subjectZoom 8s .3s both var(--ease) }
-.hero-subject:after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #0c0b0e13 38%, #0c0b0eab 100%), linear-gradient(90deg, #0c0b0e45, transparent 42%) }
-.hero-subject-frame { position: absolute; inset: 20px 20px 52px; border: 1px solid #e5dff052; z-index: 1; pointer-events: none }
-.hero-subject-caption { position: absolute; z-index: 2; right: 30px; bottom: 23px; display: flex; align-items: center; gap: 14px; color: #f2eef2cc; font-size: 9px; letter-spacing: .22em; text-transform: uppercase }
-.hero-subject-caption i { display: block; width: 7px; height: 7px; border: 1px solid var(--lilac); border-radius: 50%; box-shadow: 0 0 0 5px #e5dff014 }
-
-/* Second, smaller print layered over the main subject for depth. */
-.hero-detail {
-  position: absolute; z-index: 3; width: 140px; aspect-ratio: 4 / 5; bottom: 8vh;
-  right: calc(4vw + min(55vw, 770px) - 176px); padding: 7px; background: #17131a;
-  border: 1px solid #e5dff033; box-shadow: var(--shadow-deep); animation: detailIn 1.3s .85s both var(--ease-out);
-}
-.hero-detail img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 45%; filter: saturate(.85) }
-.hero-detail span { position: absolute; left: 7px; right: 7px; bottom: -24px; font-size: 8px; letter-spacing: .22em; text-transform: uppercase; color: #cfc4cf }
-
-.hero-card {
-  position: absolute; z-index: 4; right: 3vw; bottom: 16vh; width: 158px; padding: 13px 14px; border: 1px solid #e5dff04c;
-  background: linear-gradient(150deg, #2a2230c4, #141116b8); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 20px 50px #00000055, inset 0 1px 0 #ffffff14; animation: cardFloat 6.5s 1.1s ease-in-out infinite;
-}
-.hero-card strong { display: block; font: 28px var(--serif); color: var(--lilac); margin-bottom: 3px }
-.hero-card span { font-size: 8px; line-height: 1.4; letter-spacing: .15em; text-transform: uppercase; color: #d1c5d0 }
+.hero-subject img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; filter: saturate(.95) contrast(1.04); animation: subjectZoom 9s .2s both var(--ease) }
 
 .hero-content { position: relative; z-index: 5; width: min(1320px, 88vw); height: 100%; margin: 0 auto; padding-top: 21vh; display: flex; flex-direction: column; justify-content: space-between }
 .hero-copy { max-width: 760px; position: relative }
 .hero-copy > .eyebrow, .hero-lede { animation: copyIn 1s both var(--ease-out) }
 .hero-copy > .eyebrow { animation-delay: .2s }
 .hero-lede { animation-delay: .75s }
-.hero-title { font-size: clamp(88px, 13.6vw, 190px); line-height: .78; letter-spacing: -.07em; margin: 26px 0 34px }
+.hero-title { font-size: clamp(64px, min(12vw, 19vh), 176px); line-height: .78; letter-spacing: -.07em; margin: 26px 0 34px }
 .hero-title > span, .hero-title > em { display: block; overflow: hidden; padding-bottom: .06em }
 .hero-title > span span, .hero-title > em span { display: inline-block; animation: heroRise 1.15s .32s both var(--ease-out) }
 .hero-title > em span { animation-delay: .48s }
@@ -121,20 +101,12 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400 }
 .hero-lede { display: flex; align-items: end; gap: 40px; max-width: 650px }
 .hero-lede p { max-width: 245px; color: #d1cad1; font-size: 13px }
 
-.hero-orbit { position: absolute; right: 9vw; top: 22vh; width: 210px; height: 210px; border: 1px solid #e5dff03e; border-radius: 50%; z-index: 4; transform: rotate(-19deg); animation: orbitFloat 8s ease-in-out infinite }
-.hero-orbit:before, .hero-orbit:after { content: ""; position: absolute; border: 1px solid #e5dff025; border-radius: 50%; inset: 18px; transform: rotate(48deg) }
-.hero-orbit:after { inset: 46px; transform: rotate(-35deg) }
-.hero-orbit span { position: absolute; right: -19px; top: 42%; width: 40px; height: 40px; border: 1px solid var(--lilac); border-radius: 50%; background: var(--night); display: grid; place-items: center; font: 18px var(--serif); color: var(--lilac) }
-.hero-note { position: absolute; right: 0; bottom: 15vh; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 9px; letter-spacing: .3em; color: #d3c6d3 }
 .hero-meta { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding: 18px 0; color: #b8afb8; font-size: 9px; letter-spacing: .22em; text-transform: uppercase; animation: copyIn 1s 1s both var(--ease-out) }
 .hero-scroll { color: var(--lilac) }
 
-@keyframes subjectIn { from { opacity: 0; transform: translate3d(70px, 0, 0) scale(.97) } to { opacity: 1; transform: none } }
+@keyframes subjectIn { from { opacity: 0; transform: translate3d(40px, 0, 0) } to { opacity: 1; transform: none } }
 @keyframes subjectZoom { from { transform: scale(1.12) } to { transform: scale(1) } }
-@keyframes detailIn { from { opacity: 0; transform: translate3d(-30px, 40px, 0) rotate(-4deg) } to { opacity: 1; transform: rotate(-3deg) } }
 @keyframes heroRise { from { opacity: 0; transform: translateY(115%) } to { opacity: 1; transform: translateY(0) } }
-@keyframes orbitFloat { 0%, 100% { transform: rotate(-19deg) translateY(0) } 50% { transform: rotate(-11deg) translateY(-13px) } }
-@keyframes cardFloat { 0%, 100% { transform: translateY(0) rotate(0deg) } 50% { transform: translateY(-9px) rotate(1.2deg) } }
 @keyframes lightBreathe { 0%, 100% { opacity: .65; transform: scale(1) } 50% { opacity: 1; transform: scale(1.1) } }
 @keyframes copyIn { from { opacity: 0; transform: translateY(18px) } to { opacity: 1; transform: none } }
 
@@ -180,7 +152,7 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400 }
 }
 .intro-inset img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: saturate(.82) }
 .intro-copy { padding-right: 3vw }
-.intro-copy h2 { font-size: clamp(62px, 8.2vw, 122px); line-height: .86; letter-spacing: -.05em; margin: 23px 0 28px }
+.intro-copy h2 { font-size: clamp(48px, 7vw, 108px); line-height: .86; letter-spacing: -.05em; margin: 23px 0 28px }
 .intro-copy h2 em { font-style: normal; color: var(--lilac) }
 .intro-copy > p { max-width: 410px; color: var(--soft); font-size: 15px }
 .proof-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 23px; border-top: 1px solid var(--line); margin-top: 50px; padding-top: 22px }
@@ -190,7 +162,7 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400 }
 /* ---------- Generic sections ---------- */
 .section { padding: 125px 0 }
 .section-head { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 54px }
-.section-head h2 { font-size: clamp(64px, 8.2vw, 126px); line-height: .84; letter-spacing: -.05em; margin-top: 20px }
+.section-head h2 { font-size: clamp(48px, 7vw, 108px); line-height: .84; letter-spacing: -.05em; margin-top: 20px }
 .section-head p { max-width: 320px; color: var(--soft); font-size: 13px }
 .section-head h2.reveal-title > span:last-child { color: var(--lilac) }
 
@@ -232,7 +204,7 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400 }
 /* ---------- Atelier: the comparison ---------- */
 .atelier { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--night) 0, #0f0e12 220px) }
 .atelier-top { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 54px }
-.atelier-top h2 { font-size: clamp(64px, 8.5vw, 128px); line-height: .84; letter-spacing: -.055em; margin-top: 20px }
+.atelier-top h2 { font-size: clamp(48px, 7vw, 108px); line-height: .84; letter-spacing: -.055em; margin-top: 20px }
 .atelier-top h2 > span:last-child { color: var(--lilac) }
 .atelier-top p { max-width: 340px; color: var(--soft); font-size: 13px }
 
@@ -240,26 +212,19 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400 }
 
 .atelier-tabs { grid-area: tabs; display: grid; gap: 8px }
 .atelier-tab {
-  display: grid; grid-template-columns: 34px 1fr auto; align-items: baseline; gap: 10px; width: 100%; text-align: left;
+  display: grid; grid-template-columns: 34px 1fr; align-items: baseline; gap: 10px; width: 100%; text-align: left;
   padding: 17px 18px; border: 1px solid var(--line); background: #ffffff03; color: var(--soft);
   transition: border-color .35s, background .35s, color .35s, transform .5s var(--ease);
 }
 .atelier-tab .tab-no { font: 16px var(--serif); color: var(--rose) }
 .atelier-tab .tab-name { font: 26px/1 var(--serif); color: var(--paper) }
-.atelier-tab .tab-kind { font-size: 9px; letter-spacing: .18em; text-transform: uppercase }
 .atelier-tab:hover { border-color: #e5dff066; transform: translateX(4px) }
 .atelier-tab[aria-selected="true"] { border-color: var(--lilac); background: linear-gradient(100deg, #e5dff01f, #e5dff008); color: var(--lilac); box-shadow: inset 2px 0 0 var(--lilac) }
 
 .atelier-caption { grid-area: caption; border-top: 1px solid var(--line); padding-top: 26px; transition: opacity .35s ease, translate .45s var(--ease) }
 .atelier-caption.is-switching { opacity: 0; translate: 0 8px }
-.look-kind { display: inline-flex; align-items: center; gap: 9px; font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--lilac) }
-.look-kind:before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--rose); box-shadow: 0 0 0 4px #c793a526 }
 .atelier-caption h3 { font-size: 40px; line-height: .95; margin: 16px 0 12px }
 .atelier-caption > p { color: var(--soft); font-size: 13px; max-width: 360px }
-.look-legend { display: grid; gap: 8px; margin: 22px 0 0; padding: 0 }
-.look-legend div { display: grid; grid-template-columns: 52px 1fr; gap: 10px; font-size: 12px }
-.look-legend dt { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: #8f8392; padding-top: 2px }
-.look-legend dd { margin: 0; color: var(--paper) }
 .source-note { margin-top: 24px; color: #a99eab; font-size: 11px; line-height: 1.7 }
 .source-note a { color: #eee3f6; text-decoration: underline; text-underline-offset: 4px }
 
@@ -284,10 +249,10 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400 }
   cursor: ew-resize; touch-action: pan-y; user-select: none; -webkit-user-select: none;
   transition: opacity .35s ease, scale .6s var(--ease), filter .35s;
 }
-/* Per-look framing: every pair keeps its subject whole. Nails crop away the source's baked-in captions. */
-.compare[data-look="hair"] { --ratio: 18 / 25; --pos: 50% 28% }
-.compare[data-look="makeup"] { --ratio: 4 / 5; --pos: 50% 26% }
-.compare[data-look="nails"] { --ratio: 27 / 20; --pos: 39% 50% }
+/* Per-look framing: every pair keeps its subject whole. */
+.compare[data-look="hair"] { --ratio: 3 / 4; --pos: 50% 30% }
+.compare[data-look="makeup"] { --ratio: 3 / 4; --pos: 50% 35% }
+.compare[data-look="nails"] { --ratio: 4 / 3; --pos: 50% 50% }
 .compare:after { content: ""; position: absolute; inset: 0; z-index: 3; border-radius: inherit; box-shadow: inset 0 0 0 1px #e5dff02e; pointer-events: none }
 .compare.is-switching { opacity: 0; scale: .985; filter: blur(2px) }
 .compare-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%); pointer-events: none; -webkit-user-drag: none }
@@ -316,7 +281,6 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400 }
 .compare-knob svg { width: 26px; height: 26px }
 .compare:hover .compare-knob, .compare.is-dragging .compare-knob { scale: 1.08; box-shadow: 0 0 0 8px #e5dff01a, 0 14px 36px #00000088, inset 0 1px 0 #ffffff33 }
 .compare-handle:focus-visible .compare-knob { box-shadow: 0 0 0 3px var(--lilac), 0 14px 36px #00000088 }
-.compare-hint { position: absolute; z-index: 2; left: 0; right: 0; bottom: calc(var(--pad) / 2 - 7px); text-align: center; font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: #8f8392; pointer-events: none }
 
 /* ---------- Quote ---------- */
 .quote-shell { padding: 30px 2.2vw; background: linear-gradient(180deg, #0f0e12, var(--night)) }
@@ -328,7 +292,7 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400 }
 .quote-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; filter: saturate(.72); transition: clip-path 1.5s var(--ease-out), opacity .45s ease }
 .quote-portrait img.is-fading { opacity: 0 }
 .quote-portrait span { position: absolute; z-index: 2; right: 16px; bottom: 16px; color: #fff; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; text-shadow: 0 1px 8px #000 }
-.quote-main blockquote { font: clamp(44px, 5.3vw, 81px)/.94 var(--serif); letter-spacing: -.045em; margin: 24px 0 34px; max-width: 800px; transition: opacity .4s ease, translate .5s var(--ease) }
+.quote-main blockquote { font: clamp(34px, 4.4vw, 68px)/.98 var(--serif); letter-spacing: -.045em; margin: 24px 0 34px; max-width: 800px; transition: opacity .4s ease, translate .5s var(--ease) }
 .quote-main blockquote.is-fading { opacity: 0; translate: 0 10px }
 .quote-main blockquote:before { content: "“"; color: var(--rose); font-size: 1.4em; line-height: 0; vertical-align: -.25em; margin-right: 5px }
 .quote-by { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid #2c202d42; padding-top: 20px; max-width: 700px }
@@ -341,13 +305,13 @@ h1, h2, h3, .serif { font-family: var(--serif); font-weight: 400 }
 /* ---------- Visit ---------- */
 .visit { padding: 145px 0 110px; background: radial-gradient(circle at 74% 35%, #5c455e2b, transparent 30%), var(--night) }
 .visit-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 8vw; align-items: end }
-.visit-copy h2 { font-size: clamp(74px, 10.3vw, 156px); line-height: .79; letter-spacing: -.07em; margin: 22px 0 31px }
+.visit-copy h2 { font-size: clamp(56px, 9vw, 140px); line-height: .79; letter-spacing: -.07em; margin: 22px 0 31px }
 .visit-copy h2 em { font-style: normal; color: var(--lilac); display: block; padding-left: 9vw }
 .visit-copy p { max-width: 340px; color: var(--soft); font-size: 13px; margin-bottom: 28px }
 .visit-card { --rz: 1.2deg; position: relative; min-height: 460px; overflow: hidden; border: 1px solid #e5dff04a; padding: 27px; background: #151218; box-shadow: var(--shadow); transform: rotate(var(--rz)) }
 .visit-card:before { content: ""; position: absolute; z-index: 2; inset: 15px; border: 1px solid #e5dff039; pointer-events: none }
-.visit-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; opacity: .66; filter: saturate(.7) contrast(1.05) }
-.visit-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, #0c0b0e10 20%, #0c0b0eaa 100%); z-index: 1 }
+.visit-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; opacity: .7; filter: saturate(.6) brightness(.55) contrast(1.05) }
+.visit-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, #0c0b0e8c 0%, #0c0b0e59 45%, #0c0b0ed9 100%); z-index: 1 }
 .visit-info { position: relative; z-index: 3; display: flex; height: 100%; min-height: 402px; flex-direction: column; justify-content: space-between }
 .visit-index { font-size: 9px; letter-spacing: .22em; color: var(--lilac) }
 .visit-info p { font: 32px/.95 var(--serif); max-width: 225px; text-shadow: 0 2px 22px #000c }
@@ -409,8 +373,6 @@ body.modal-open { overflow: hidden }
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
   .atelier-layout { grid-template-columns: minmax(250px, 300px) 1fr }
-  .atelier-tab .tab-kind { display: none }
-  .hero-detail { display: none }
   .navlinks { gap: 20px }
   .wordmark span { display: none }
 }
@@ -419,8 +381,7 @@ body.modal-open { overflow: hidden }
   .navlinks { gap: 17px }
   .navlinks a:not(.btn) { display: none }
   .hero-content { padding-top: 22vh }
-  .hero-orbit { right: 5vw; top: 17vh; width: 155px; height: 155px }
-  .intro-grid, .quote-layout, .visit-grid { grid-template-columns: 1fr; gap: 45px }
+    .intro-grid, .quote-layout, .visit-grid { grid-template-columns: 1fr; gap: 45px }
   .intro-photo { height: 500px }
   .intro-inset { right: 4vw; width: 170px }
   .intro-copy { padding-right: 0; padding-top: 30px }
@@ -431,7 +392,6 @@ body.modal-open { overflow: hidden }
   .atelier-layout { grid-template-columns: 1fr; grid-template-areas: "tabs" "stage" "caption"; row-gap: 26px }
   .atelier-tabs { grid-template-columns: repeat(3, 1fr) }
   .atelier-tab { grid-template-columns: 1fr; gap: 6px; padding: 14px }
-  .atelier-tab .tab-kind { display: block }
   .atelier-tab:hover { transform: none }
   .atelier-tab[aria-selected="true"] { box-shadow: inset 0 -2px 0 var(--lilac) }
   .compare-stage { aspect-ratio: 1 / 1 }
@@ -439,11 +399,11 @@ body.modal-open { overflow: hidden }
 
 @media (max-width: 620px) {
   .wrap { width: 88vw }
-  .hero-subject { left: 10vw; right: -24vw; top: 15vh; width: 114vw; height: 72vh; min-height: 500px; clip-path: polygon(15% 0, 100% 0, 100% 90%, 0 100%); opacity: .88 }
-  .hero-subject-frame { inset: 17px 17px 43px }
-  .hero-subject-caption { right: 23px; bottom: 17px; font-size: 7px }
-  .hero-card { right: 6vw; bottom: 18vh; width: 143px; padding: 11px 12px }
-  .hero-card strong { font-size: 23px }
+  .hero-subject { left: 0; width: 100%; bottom: auto; height: 74%; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%) }
+  .hero-subject img { object-position: 50% 18% }
+
+
+
   .topbar { height: 68px; padding: 0 6vw }
   .wordmark { font-size: 19px }
   .wordmark span { display: none }
@@ -453,16 +413,14 @@ body.modal-open { overflow: hidden }
   .navlinks a:not(.btn) { display: block; padding: 8px 0 }
   .navlinks a:not(.btn):after { display: none }
   .hero { min-height: 720px }
-  .hero-bg { opacity: .8 }
+  .hero-bg { opacity: .55 }
   .hero:after { height: 22% }
-  .hero-content { padding-top: 24vh }
-  .hero-title { font-size: clamp(76px, 20vw, 120px); line-height: .8 }
+  .hero-content { padding-top: max(46vh, 340px) }
+  .hero-title { font-size: clamp(56px, 17vw, 92px); line-height: .82 }
   .hero-title em { padding-left: 0 }
   .hero-lede { display: block }
   .hero-lede p { margin-bottom: 24px }
-  .hero-orbit { right: -33px; top: 26vh }
-  .hero-note { display: none }
-  .hero-meta { font-size: 8px }
+      .hero-meta { font-size: 8px }
   .hero-meta span:last-child { display: none }
   .ribbon { height: 56px }
   .ribbon-track { font-size: 20px; gap: 27px }
@@ -471,13 +429,13 @@ body.modal-open { overflow: hidden }
   .quote-shell { padding: 18px 3vw }
   .intro-photo { height: 420px }
   .intro-inset { width: 120px; right: -2vw; bottom: -40px }
-  .intro-copy h2 { font-size: 76px }
+  .intro-copy h2 { font-size: clamp(44px, 13vw, 60px) }
   .proof-row { gap: 12px }
   .proof-row strong { font-size: 28px }
   .proof-row span { font-size: 8px; letter-spacing: .08em }
   .section-head, .atelier-top { display: block }
   .section-head p, .atelier-top p { margin-top: 25px }
-  .section-head h2, .atelier-top h2 { font-size: 76px }
+  .section-head h2, .atelier-top h2 { font-size: clamp(44px, 13vw, 60px) }
   .consult-line { display: block; margin-top: 35px }
   .consult-line:before { left: 28px; top: 28px; bottom: 28px; width: 1px; height: auto; right: auto }
   .consult-line:after { display: none }
@@ -499,23 +457,20 @@ body.modal-open { overflow: hidden }
   .atelier-tabs { gap: 6px }
   .atelier-tab { padding: 12px 10px }
   .atelier-tab .tab-name { font-size: 22px }
-  .atelier-tab .tab-kind { font-size: 7px; letter-spacing: .14em }
   .compare-stage { aspect-ratio: 4 / 5; --pad: 16px }
-  .compare[data-look="nails"] { --ratio: 6 / 5; --pos: 43% 50% }
   .compare-stage:before { inset: 8px }
   .compare-knob { width: 50px; height: 50px }
   .compare-label { top: 10px; padding: 6px 9px; font-size: 8px; letter-spacing: .14em }
   .compare-label.before { left: 10px }
   .compare-label.after { right: 10px }
-  .compare-hint { display: none }
-  .atelier-caption h3 { font-size: 34px }
+    .atelier-caption h3 { font-size: 34px }
   .quote-layout { gap: 30px }
   .quote-portrait { height: 390px }
-  .quote-main blockquote { font-size: 48px }
+  .quote-main blockquote { font-size: 36px }
   .quote-by { display: block }
   .quote-by span { display: block; margin-top: 8px }
   .quote-nav { margin-top: 19px }
-  .visit-copy h2 { font-size: 86px }
+  .visit-copy h2 { font-size: clamp(52px, 16vw, 72px) }
   .visit-copy h2 em { padding-left: 0 }
   .footer { padding: 30px 6vw; display: block }
   .footer-links { margin-top: 16px; flex-wrap: wrap }

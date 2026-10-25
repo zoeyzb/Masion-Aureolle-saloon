@@ -15,7 +15,7 @@ A static salon website with a server-side appointment **request** form. Requests
 - `styles.css` — all styling. CSS animations own `transform`; the motion engine only writes the individual `translate`, `scale` and `rotate` properties so the two never fight.
 - `main.js` — navigation, scroll reveals, the depth engine (`data-hero-*`, `data-speed`, `data-media`, `data-sheet`, `data-lean`, documented at the top of `initDepth`), pointer tilt (`data-tilt`), the atelier comparison slider, client notes, and the booking form.
 - All motion is disabled under `prefers-reduced-motion`.
-- The atelier comparison uses one slider for every look. Photo pairs and their honest labels live in `LOOKS` in `main.js`; each look's frame ratio and focal point live in `.compare[data-look]` in `styles.css`.
+- The atelier comparison uses one slider for every look. Each look is a pixel-aligned same-person before/after pair (illustrative, generated imagery, labelled as such on the page) defined in `LOOKS` in `main.js`; each look's frame ratio and focal point live in `.compare[data-look]` in `styles.css`.
 
 ## Booking integration
 

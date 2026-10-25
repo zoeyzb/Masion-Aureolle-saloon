@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230c0b0e'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23e5dff0' text-anchor='middle'%3EMA%3C/text%3E%3C/svg%3E">
-  <link rel="preload" as="image" href="assets/hairstylist-client.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-portrait.jpg" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -18,7 +18,7 @@
   <header class="topbar" id="topbar">
     <a class="wordmark" href="#top">MAISON AURELLE <span>ATELIER</span></a>
     <nav class="navlinks" id="navlinks" aria-label="Main navigation">
-      <a href="#point-of-view">The atelier</a><a href="#services">Services</a><a href="#atelier">Our artistry</a><a href="#journal">Client notes</a><a class="btn solid" href="#visit">Book your visit <span>↗</span></a>
+      <a href="#point-of-view">Atelier</a><a href="#services">Services</a><a href="#atelier">Transformations</a><a href="#journal">Reviews</a><a class="btn solid" href="#visit" data-open-booking>Book your visit <span>↗</span></a>
     </nav>
     <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">MENU</button>
   </header>
@@ -27,25 +27,16 @@
     <section class="hero" aria-label="Maison Aurelle introduction">
       <div class="hero-bg" data-pointer="-4" data-hero-y="0.06"></div>
       <div class="hero-light" data-pointer="-14"></div>
-      <div class="hero-subject" data-hero-y="0.16" data-pointer="8">
-        <img src="assets/hairstylist-client.jpg" alt="Stylist creating a polished salon finish" width="1600" height="2400" fetchpriority="high" decoding="async" data-hero-zoom="0.1">
-        <div class="hero-subject-frame"></div>
-        <div class="hero-subject-caption"><i></i><span>In the chair / Maison Aurelle</span></div>
+      <div class="hero-subject" data-hero-y="0.14" data-pointer="10">
+        <img src="assets/hero-portrait.jpg" alt="Woman with glossy dark waves and luminous skin in warm golden light" width="864" height="1152" fetchpriority="high" decoding="async" data-hero-zoom="0.08">
       </div>
-      <figure class="hero-detail" data-hero-y="-0.3" data-pointer="18" aria-hidden="true">
-        <img src="assets/editorial-4.jpg" alt="" width="1200" height="1200" decoding="async">
-        <span>Detail / Nails</span>
-      </figure>
-      <div class="hero-card" data-hero-y="-0.22" data-pointer="13"><strong>01 / 03</strong><span>The atelier edit<br>Hair · Makeup · Nails</span></div>
-      <div class="hero-orbit" data-hero-y="-0.12" data-pointer="-10"><span>✦</span></div>
-      <div class="hero-note">A BEAUTY ATELIER FOR YOUR SIGNATURE</div>
       <div class="hero-content">
         <div class="hero-copy" data-hero-y="-0.1" data-hero-fade>
-          <div class="eyebrow accent">Maison Aurelle / A different kind of atelier</div>
+          <div class="eyebrow accent">Hair · Makeup · Nails</div>
           <h1 class="hero-title"><span><span>Beauty,</span></span><em><span>unbound.</span></em></h1>
-          <div class="hero-lede"><p>Hair, makeup, and nails shaped around the woman you already are — with more intention, more ease, and a little more glow.</p><a class="btn solid" href="#services">Discover the atelier <span>↗</span></a></div>
+          <div class="hero-lede"><p>Your look, refined.<br>Never replaced.</p><a class="btn solid" href="#visit" data-open-booking>Book your visit <span>↗</span></a></div>
         </div>
-        <div class="hero-meta"><span class="hero-scroll">Scroll to discover ↓</span><span>Hair · Makeup · Nails</span><span>Parisian soul / Modern finish</span></div>
+        <div class="hero-meta"><span class="hero-scroll">Scroll ↓</span><span>By appointment only</span></div>
       </div>
     </section>
 
@@ -56,73 +47,67 @@
         <div class="intro-visual reveal">
           <div class="intro-photo reveal-media" data-tilt="4">
             <img src="assets/salon-interior.jpg" alt="Bright modern salon interior with styling stations" width="2000" height="1334" loading="lazy" decoding="async" data-media="0.08">
-            <span class="photo-tag">01 / The point of view</span>
+            <span class="photo-tag">The atelier</span>
           </div>
-          <figure class="intro-inset" data-speed="56" aria-hidden="true"><img src="assets/editorial-0.jpg" alt="" width="1200" height="1500" loading="lazy" decoding="async"></figure>
+          <figure class="intro-inset" data-speed="56" aria-hidden="true"><img src="assets/editorial-3.jpg" alt="" width="1200" height="1799" loading="lazy" decoding="async"></figure>
         </div>
         <div class="intro-copy reveal">
           <div class="eyebrow accent">Not a makeover. A signature.</div>
           <h2 class="reveal-title"><span>Come as you are.</span><br><em>Leave more you.</em></h2>
-          <p>Maison Aurelle is a modern beauty atelier built around considered choices. Our artists look at the whole picture — your texture, your pace, your point of view — and make the smallest details feel quietly transformative.</p>
-          <div class="proof-row"><div><strong>12</strong><span>Years of craft</span></div><div><strong>4.9</strong><span>Client rating</span></div><div><strong>1:1</strong><span>Private attention</span></div></div>
+          <p>Considered beauty, shaped around you.</p>
+          <div class="proof-row"><div><strong>12</strong><span>Years of craft</span></div><div><strong>4.9</strong><span>Client rating</span></div><div><strong>1:1</strong><span>Private chair</span></div></div>
         </div>
       </div>
     </section>
 
     <section class="section consult" id="consult">
       <div class="wrap">
-        <div class="section-head reveal"><div><div class="eyebrow">Your visit, considered</div><h2 class="reveal-title"><span>Find your</span><br><span>finish.</span></h2></div><p>Start with how you want to feel. We’ll shape the details around you in a calm, clear consultation before the first brushstroke.</p></div>
+        <div class="section-head reveal"><div><div class="eyebrow">Your visit</div><h2 class="reveal-title"><span>Find your</span><br><span>finish.</span></h2></div><p>Three choices. One calm consultation.</p></div>
         <div class="consult-line reveal" id="consultLine">
-          <button class="consult-step active" data-step="service" aria-pressed="true"><span class="step-dot">01</span><h3>Choose your service</h3><p>Hair, makeup, or nails — start where the mood begins.</p></button>
-          <button class="consult-step" data-step="experience" aria-pressed="false"><span class="step-dot">02</span><h3>Choose your experience</h3><p>Quiet ritual, quick polish, or a full atelier afternoon.</p></button>
-          <button class="consult-step" data-step="finish" aria-pressed="false"><span class="step-dot">03</span><h3>Choose your finish</h3><p>Soft and natural, luminous, or beautifully unapologetic.</p></button>
+          <button class="consult-step active" data-step="service" aria-pressed="true"><span class="step-dot">01</span><h3>Service</h3><p>Hair, makeup or nails.</p></button>
+          <button class="consult-step" data-step="experience" aria-pressed="false"><span class="step-dot">02</span><h3>Experience</h3><p>Quick polish or full ritual.</p></button>
+          <button class="consult-step" data-step="finish" aria-pressed="false"><span class="step-dot">03</span><h3>Finish</h3><p>Soft, luminous or bold.</p></button>
         </div>
-        <div class="consult-bottom reveal"><div class="selection">Your starting point: <b id="selectionText">Hair artistry</b></div><a class="btn" href="#visit">Build my appointment <span>↗</span></a></div>
+        <div class="consult-bottom reveal"><div class="selection">Starting with: <b id="selectionText">Hair artistry</b></div><a class="btn" href="#visit" data-open-booking>Book it <span>↗</span></a></div>
       </div>
     </section>
 
     <section class="section services" id="services">
       <div class="wrap">
-        <div class="section-head reveal"><div><div class="eyebrow">The service edit</div><h2 class="reveal-title"><span>Made for</span><br><span>your mood.</span></h2></div><p>Every service is a conversation first, a technique second, and a finish you can actually live in.</p></div>
+        <div class="section-head reveal"><div><div class="eyebrow">Services</div><h2 class="reveal-title"><span>Made for</span><br><span>your mood.</span></h2></div></div>
         <div class="service-grid" data-stagger>
-          <article class="service-card reveal reveal-media" data-tilt="6"><img src="assets/stylist-client.jpg" alt="Stylist working on a client's hair" width="2000" height="1336" loading="lazy" decoding="async" style="object-position:58% 40%"><span class="card-no">01</span><div class="card-copy"><h3>Hair</h3><p>Shape, movement, colour, and the kind of finish that feels like yours.</p><span class="card-link">Explore hair ↗</span></div></article>
-          <article class="service-card reveal reveal-media" data-tilt="6"><img src="assets/editorial-1.jpg" alt="Close portrait with luminous gold eye makeup and glossy lips" width="1200" height="1804" loading="lazy" decoding="async" style="object-position:50% 34%"><span class="card-no">02</span><div class="card-copy"><h3>Makeup</h3><p>Skin-first artistry for days that call for a little more light.</p><span class="card-link">Explore makeup ↗</span></div></article>
-          <article class="service-card reveal reveal-media" data-tilt="6"><img src="assets/editorial-4.jpg" alt="Short natural nails in soft pastel gel polish" width="1200" height="1200" loading="lazy" decoding="async" style="object-position:48% 50%"><span class="card-no">03</span><div class="card-copy"><h3>Nails</h3><p>Precision, colour, and a polished detail that changes the whole look.</p><span class="card-link">Explore nails ↗</span></div></article>
-          <article class="service-card reveal reveal-media" data-tilt="6"><img src="assets/salon-floor.jpg" alt="Warm modern salon interior" width="2000" height="1334" loading="lazy" decoding="async" style="object-position:50% 50%"><span class="card-no">04</span><div class="card-copy"><h3>The ritual</h3><p>A slower kind of appointment, with room to exhale between the details.</p><span class="card-link">Meet the atelier ↗</span></div></article>
+          <article class="service-card reveal reveal-media" data-tilt="6"><img src="assets/editorial-0.jpg" alt="Long boho braids styled over one shoulder" width="1200" height="1500" loading="lazy" decoding="async" style="object-position:50% 30%"><span class="card-no">01</span><div class="card-copy"><h3>Hair</h3><p>Cut, colour, shine.</p></div></article>
+          <article class="service-card reveal reveal-media" data-tilt="6"><img src="assets/editorial-1.jpg" alt="Close portrait with luminous gold eye makeup and glossy lips" width="1200" height="1804" loading="lazy" decoding="async" style="object-position:50% 34%"><span class="card-no">02</span><div class="card-copy"><h3>Makeup</h3><p>Skin-first glam.</p></div></article>
+          <article class="service-card reveal reveal-media" data-tilt="6"><img src="assets/editorial-4.jpg" alt="Short natural nails in soft pastel gel polish" width="1200" height="1200" loading="lazy" decoding="async" style="object-position:48% 50%"><span class="card-no">03</span><div class="card-copy"><h3>Nails</h3><p>Polish, perfected.</p></div></article>
+          <article class="service-card reveal reveal-media" data-tilt="6"><img src="assets/salon-floor.jpg" alt="Warm modern salon interior" width="2000" height="1334" loading="lazy" decoding="async" style="object-position:50% 50%"><span class="card-no">04</span><div class="card-copy"><h3>The ritual</h3><p>Slow, unhurried care.</p></div></article>
         </div>
       </div>
     </section>
 
     <section class="section atelier" id="atelier">
       <div class="wrap">
-        <div class="atelier-top reveal"><div><div class="eyebrow">The visual atelier</div><h2 class="reveal-title"><span>Find your</span><br><span>signature.</span></h2></div><p>Three references, labelled for exactly what they show: two real treatment results on the same client, and one look comparison. Drag the handle to compare.</p></div>
+        <div class="atelier-top reveal"><div><div class="eyebrow">Before / after</div><h2 class="reveal-title"><span>The</span><br><span>transformation.</span></h2></div><p>Drag to reveal.</p></div>
         <div class="atelier-layout">
-          <div class="atelier-tabs reveal" role="tablist" aria-label="Reference categories">
-            <button class="atelier-tab" id="tab-hair" data-look="hair" role="tab" aria-selected="true" aria-controls="lookPanel"><span class="tab-no">01</span><span class="tab-name">Hair</span><span class="tab-kind">Before / after</span></button>
-            <button class="atelier-tab" id="tab-makeup" data-look="makeup" role="tab" aria-selected="false" aria-controls="lookPanel" tabindex="-1"><span class="tab-no">02</span><span class="tab-name">Makeup</span><span class="tab-kind">Look comparison</span></button>
-            <button class="atelier-tab" id="tab-nails" data-look="nails" role="tab" aria-selected="false" aria-controls="lookPanel" tabindex="-1"><span class="tab-no">03</span><span class="tab-name">Nails</span><span class="tab-kind">Before / after</span></button>
+          <div class="atelier-tabs reveal" role="tablist" aria-label="Transformations">
+            <button class="atelier-tab" id="tab-hair" data-look="hair" role="tab" aria-selected="true" aria-controls="lookPanel"><span class="tab-no">01</span><span class="tab-name">Hair</span></button>
+            <button class="atelier-tab" id="tab-makeup" data-look="makeup" role="tab" aria-selected="false" aria-controls="lookPanel" tabindex="-1"><span class="tab-no">02</span><span class="tab-name">Makeup</span></button>
+            <button class="atelier-tab" id="tab-nails" data-look="nails" role="tab" aria-selected="false" aria-controls="lookPanel" tabindex="-1"><span class="tab-no">03</span><span class="tab-name">Nails</span></button>
           </div>
           <div class="compare-stage reveal" id="lookPanel" role="tabpanel" aria-labelledby="tab-hair" data-lean="9">
             <div class="compare" id="compare" data-look="hair">
-              <img class="compare-img before" id="beforeImage" src="assets/hair-before.webp" alt="Long, wavy hair with visible frizz, photographed from behind before a smoothing treatment" width="566" height="850" decoding="async" draggable="false">
-              <img class="compare-img after" id="afterImage" src="assets/hair-after.webp" alt="The same client’s hair from behind after smoothing: straight, glossy and even" width="566" height="850" decoding="async" draggable="false">
+              <img class="compare-img before" id="beforeImage" src="assets/hair-before.jpg" alt="Dull, frizzy brown hair from behind before the appointment" width="864" height="1152" decoding="async" draggable="false">
+              <img class="compare-img after" id="afterImage" src="assets/hair-after.jpg" alt="The same hair after: glossy brunette with honey balayage and soft waves" width="864" height="1152" decoding="async" draggable="false">
               <span class="compare-label before" id="lookLeftLabel">Before</span>
               <span class="compare-label after" id="lookRightLabel">After</span>
-              <div class="compare-handle" id="compareHandle" role="slider" tabindex="0" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Compare Before and After">
+              <div class="compare-handle" id="compareHandle" role="slider" tabindex="0" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Compare before and after">
                 <span class="compare-knob" aria-hidden="true"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 8.5 5 13l4.5 4.5M16.5 8.5 21 13l-4.5 4.5"/></svg></span>
               </div>
             </div>
-            <p class="compare-hint" aria-hidden="true">Drag to compare</p>
           </div>
           <div class="atelier-caption reveal" id="lookCaption" aria-live="polite">
-            <span class="look-kind" id="lookKind">Real result · same client</span>
-            <h3 id="lookTitle">Smoothing ritual</h3>
-            <p id="lookDescription">One client photographed before and after a smoothing treatment: the same hair, the same light, the same angle.</p>
-            <dl class="look-legend">
-              <div><dt>Left</dt><dd id="legendLeft">Natural wave and frizz</dd></div>
-              <div><dt>Right</dt><dd id="legendRight">Smoothing treatment, same client</dd></div>
-            </dl>
-            <p class="source-note">Third-party photography shown as inspiration, not Maison Aurelle client results. <a href="https://owa-colors.com/en/gallery/" target="_blank" rel="noopener noreferrer" id="atelierSource">Source: OWA Colors ↗</a></p>
+            <h3 id="lookTitle">Gloss + balayage</h3>
+            <p id="lookDescription">Frizz out. Honey ribbons and mirror shine in.</p>
+            <p class="source-note">Illustrative imagery.</p>
           </div>
         </div>
       </div>
@@ -131,16 +116,16 @@
     <div class="quote-shell">
       <section class="quote-section" id="journal" data-sheet="0.05">
         <div class="wrap quote-layout">
-          <div class="quote-portrait reveal reveal-media"><img id="quoteImage" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=84" alt="Maison Aurelle client portrait" loading="lazy" decoding="async" data-media="0.06"><span id="quoteImageCaption">Client portrait / Noor</span></div>
-          <div class="quote-main reveal"><div class="eyebrow">Notes from the chair</div><blockquote id="quoteText">I came in wanting a change. I left feeling like I had finally met my own reflection.</blockquote><div class="quote-by"><div><strong id="quoteName">Noor A.</strong><span id="quoteService">Colour + finish / London</span></div><div class="quote-nav"><button id="quotePrev" aria-label="Previous review">←</button><button id="quoteNext" aria-label="Next review">→</button></div></div></div>
+          <div class="quote-portrait reveal reveal-media"><img id="quoteImage" src="assets/makeup-after.jpg" alt="Maison Aurelle client portrait" loading="lazy" decoding="async" data-media="0.06"><span id="quoteImageCaption">Noor</span></div>
+          <div class="quote-main reveal"><div class="eyebrow">Client notes</div><blockquote id="quoteText">I finally met my own reflection.</blockquote><div class="quote-by"><div><strong id="quoteName">Noor A.</strong><span id="quoteService">Soft glam</span></div><div class="quote-nav"><button id="quotePrev" aria-label="Previous review">←</button><button id="quoteNext" aria-label="Next review">→</button></div></div></div>
         </div>
       </section>
     </div>
 
     <section class="visit" id="visit">
       <div class="wrap visit-grid">
-        <div class="visit-copy reveal"><div class="eyebrow accent">The final detail</div><h2 class="reveal-title"><span>Make time</span><br><em>for you.</em></h2><p>Tell us what you’re imagining. We’ll make space for the consultation, the coffee, and the exact right finish.</p><button class="btn solid" id="openBooking" type="button">Request an appointment <span>↗</span></button></div>
-        <div class="visit-card reveal" data-tilt="4"><img src="https://images.unsplash.com/photo-1675034743339-0b0747047727?auto=format&fit=crop&w=1300&q=82" alt="Guest having her hair cared for in a salon" loading="lazy" decoding="async" data-media="0.07"><div class="visit-overlay"></div><div class="visit-info"><div class="visit-index">04 / THE AURELLE RITUAL</div><p>A considered hour, entirely yours.</p><div class="address">Appointments by request<br><a href="mailto:sierra@recoverrevenue.company">sierra@recoverrevenue.company</a><br><a href="tel:+18722420771">+1 (872) 242-0771</a></div><span class="visit-mark">MA</span></div></div>
+        <div class="visit-copy reveal"><div class="eyebrow accent">Book</div><h2 class="reveal-title"><span>Make time</span><br><em>for you.</em></h2><p>Tell us the look. We’ll make the time.</p><button class="btn solid" id="openBooking" type="button">Request an appointment <span>↗</span></button></div>
+        <div class="visit-card reveal" data-tilt="4"><img src="https://images.unsplash.com/photo-1675034743339-0b0747047727?auto=format&fit=crop&w=1300&q=82" alt="Guest having her hair cared for in a salon" loading="lazy" decoding="async" data-media="0.07"><div class="visit-overlay"></div><div class="visit-info"><div class="visit-index">BY APPOINTMENT</div><p>An hour, entirely yours.</p><div class="address"><a href="mailto:sierra@recoverrevenue.company">sierra@recoverrevenue.company</a><br><a href="tel:+18722420771">+1 (872) 242-0771</a></div><span class="visit-mark">MA</span></div></div>
       </div>
     </section>
   </main>
@@ -150,7 +135,7 @@
       <button class="booking-close" id="closeBooking" type="button" aria-label="Close booking form">×</button>
       <div class="booking-panel-head">
         <div><div class="eyebrow accent">Maison Aurelle / By appointment</div><h2 id="bookingTitle">Make it<br><em>yours.</em></h2></div>
-        <p>Share your preferred service and time. We’ll email you to discuss availability; this is an appointment request, not a confirmed booking.</p>
+        <p>A request, not a confirmed booking. We’ll email you to confirm.</p>
       </div>
       <div class="booking-progress" aria-label="Booking progress"><span class="active" data-progress="1">01</span><i></i><span data-progress="2">02</span><i></i><span data-progress="3">03</span></div>
       <form id="bookingForm" novalidate><div class="booking-honeypot" aria-hidden="true"><label>Website<input id="bookingWebsite" type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
@@ -178,7 +163,7 @@
     </section>
   </div>
 
-  <footer class="footer"><a class="wordmark" href="#top">MAISON AURELLE</a><div>Beauty, beyond ordinary.</div><div class="footer-links"><a href="#services">Services</a><a href="#journal">Client notes</a><a href="#visit">Contact</a></div></footer>
+  <footer class="footer"><a class="wordmark" href="#top">MAISON AURELLE</a><div>Beauty, beyond ordinary.</div><div class="footer-links"><a href="#services">Services</a><a href="#journal">Reviews</a><a href="#visit">Contact</a></div></footer>
 
   <script src="main.js" defer></script>
 </body>
