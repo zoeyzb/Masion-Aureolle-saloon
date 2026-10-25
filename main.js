@@ -396,9 +396,9 @@ initComparison();
 
 /* ---------- Client notes ---------- */
 const reviews = [
-  { text: 'I finally met my own reflection.', name: 'Noor A.', service: 'Soft glam', image: 'assets/makeup-after.jpg', caption: 'Noor' },
-  { text: 'Calm, intentional, never overdone.', name: 'Elena M.', service: 'Gloss + balayage', image: 'assets/hair-after.jpg', caption: 'Elena' },
-  { text: 'Soft, strong, completely mine.', name: 'Maya R.', service: 'Braids + movement', image: 'assets/editorial-0.jpg', caption: 'Maya' },
+  { text: 'Your makeup should still look like you, just refreshed and ready for the occasion.', name: 'MAKEUP', service: 'What to expect', image: 'assets/makeup-card.jpg', caption: 'Makeup inspiration' },
+  { text: 'We start with your hair texture, everyday routine and the result you want to maintain.', name: 'HAIR', service: 'Our approach', image: 'assets/hair-after.jpg', caption: 'Hair inspiration' },
+  { text: 'A considered appointment, a comfortable pace, and details worth taking time over.', name: 'THE RITUAL', service: 'In the chair', image: 'assets/salon-card.jpg', caption: 'The salon experience' },
 ];
 const quoteText = document.getElementById('quoteText');
 const quoteImage = document.getElementById('quoteImage');
