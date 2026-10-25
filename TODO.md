@@ -12,9 +12,15 @@
 - [x] Simplify consultation into an elegant horizontal step flow for choosing a service, experience, and finish.
 - [x] Add clear selected states and subtle dimensional motion.
 
-## Before / after atelier
-- [x] Add separate interactive Hair, Makeup, and Nails before-and-after experiences.
-- [x] Add an intuitive comparison control with premium imagery and labels.
+## Visual atelier comparison
+- [x] One comparison slider shared by Hair, Makeup, and Nails (pointer, touch, and keyboard).
+- [x] Show each photo pair at its own aspect ratio inside a fixed studio stage — no baked-in padding or double cropping.
+- [x] Label honestly: Hair and Nails are real same-client results; Makeup is a look comparison of two different clients.
+
+## Depth and motion
+- [x] Scroll-linked hero parallax and zoom, layered image prints, and pointer depth on fine pointers.
+- [x] Aperture-style image reveals, slow push-out zoom inside framed photos, and a lifted client-notes sheet.
+- [x] Subtle pointer tilt with soft glare on framed cards; everything disabled under reduced motion.
 
 ## Editorial trust and conversion
 - [x] Add an editorial testimonials section with client imagery, prominent quotes, supporting details, and navigation.

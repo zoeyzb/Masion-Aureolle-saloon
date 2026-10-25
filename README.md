@@ -9,6 +9,14 @@ A static salon website with a server-side appointment **request** form. Requests
 - Run `npm run dev` and open `http://localhost:3000`.
 - Run `npm test` for validation, delivery-acceptance, and failure-path tests.
 
+## Front-end structure
+
+- `index.html` — markup only.
+- `styles.css` — all styling. CSS animations own `transform`; the motion engine only writes the individual `translate`, `scale` and `rotate` properties so the two never fight.
+- `main.js` — navigation, scroll reveals, the depth engine (`data-hero-*`, `data-speed`, `data-media`, `data-sheet`, `data-lean`, documented at the top of `initDepth`), pointer tilt (`data-tilt`), the atelier comparison slider, client notes, and the booking form.
+- All motion is disabled under `prefers-reduced-motion`.
+- The atelier comparison uses one slider for every look. Photo pairs and their honest labels live in `LOOKS` in `main.js`; each look's frame ratio and focal point live in `.compare[data-look]` in `styles.css`.
+
 ## Booking integration
 
 The modal sends JSON to `POST /api/booking`. The backend validates the service, preferred date/time, name, and email; rejects cross-origin submissions and a hidden honeypot field; and forwards an email through Resend.
