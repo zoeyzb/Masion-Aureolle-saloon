@@ -220,43 +220,27 @@ consultLine.addEventListener('focusin', () => clearInterval(consultTimer));
 consultLine.addEventListener('focusout', startConsultRotation);
 startConsultRotation();
 
-/* ---------- Visual atelier: one comparison slider for every look ----------
-   Third-party photographic references, credited in the caption. Nothing here is presented as
-   Maison Aurelle client work. Each pair shares one geometry; the frame ratio and focal point
-   for each look live in styles.css under `.compare[data-look]`. */
+/* ---------- Transformations: one comparison slider for every look ----------
+   Illustrative imagery (labelled as such on the page). Each before/after pair shares one geometry;
+   the frame ratio and focal point for each look live in styles.css under `.compare[data-look]`. */
 const LOOKS = {
   hair: {
-    kind: 'Real result · same client',
-    title: 'Smoothing ritual',
-    description: 'One client photographed before and after a smoothing treatment: the same hair, the same light, the same angle.',
-    before: { src: 'assets/hair-before.webp', alt: 'Long, wavy hair with visible frizz, photographed from behind before a smoothing treatment' },
-    after: { src: 'assets/hair-after.webp', alt: 'The same client’s hair from behind after smoothing: straight, glossy and even' },
-    labels: ['Before', 'After'],
-    legend: ['Natural wave and frizz', 'Smoothing treatment, same client'],
-    credit: 'OWA Colors',
-    source: 'https://owa-colors.com/en/gallery/',
+    title: 'Gloss + balayage',
+    description: 'Frizz out. Honey ribbons and mirror shine in.',
+    before: { src: 'assets/hair-before.jpg', alt: 'Dull, frizzy brown hair from behind before the appointment' },
+    after: { src: 'assets/hair-after.jpg', alt: 'The same hair after: glossy brunette with honey balayage and soft waves' },
   },
   makeup: {
-    kind: 'Look comparison · two clients',
-    title: 'Two finishes, side by side',
-    description: 'Not a transformation. Two different clients and two different looks, so you can compare a soft day glam with a luminous bridal finish.',
-    before: { src: 'assets/makeup-before.jpg', alt: 'Studio portrait of a client wearing soft, polished day glam makeup with long brunette waves' },
-    after: { src: 'assets/makeup-after.jpg', alt: 'A different client in a white strapless dress receiving a luminous bridal makeup finish' },
-    labels: ['Look A · Soft glam', 'Look B · Bridal'],
-    legend: ['Soft glam: defined brows, warm matte skin', 'Bridal glow: sculpted lids, luminous skin'],
-    credit: 'Freckle Face Makeup',
-    source: 'https://www.frecklefacemakeup.com/before-and-after.html',
+    title: 'Soft glam',
+    description: 'Bare skin to sculpted, luminous glow.',
+    before: { src: 'assets/makeup-before.jpg', alt: 'A woman with bare, makeup-free skin and her hair in a low bun' },
+    after: { src: 'assets/makeup-after.jpg', alt: 'The same woman in soft glam: luminous skin, sculpted cheeks, smoky brown eyes and a nude-rose lip' },
   },
   nails: {
-    kind: 'Real result · same client',
-    title: 'Natural nail restoration',
-    description: 'One documented nail-care case: the same two thumbnails before and after a course of restorative care, without colour or extensions.',
-    before: { src: 'assets/nails-case-before.jpg', alt: 'Two thumbnails with ridges, dry cuticles and uneven free edges before nail care' },
-    after: { src: 'assets/nails-case-after.jpg', alt: 'The same thumbnails after restorative care: smoother surface, neat cuticles and a natural shine' },
-    labels: ['Before', 'After'],
-    legend: ['Ridged surface, dry cuticles', 'Smoothed, conditioned, natural shine'],
-    credit: 'LOI Nail',
-    source: 'https://loi-nail.com/menu/ikusei.html',
+    title: 'Gel manicure',
+    description: 'Ragged and bare to glossy cherry almond.',
+    before: { src: 'assets/nails-before.jpg', alt: 'Short, uneven bare nails with dry cuticles' },
+    after: { src: 'assets/nails-after.jpg', alt: 'The same hand with shaped almond nails in high-gloss cherry gel polish' },
   },
 };
 
@@ -281,7 +265,7 @@ function initComparison() {
     compare.style.setProperty('--split', `${split.toFixed(2)}%`);
     const shown = Math.round(split);
     handle.setAttribute('aria-valuenow', String(shown));
-    handle.setAttribute('aria-valuetext', `${shown}% ${LOOKS[current].labels[0]}, ${100 - shown}% ${LOOKS[current].labels[1]}`);
+    handle.setAttribute('aria-valuetext', `${shown}% before, ${100 - shown}% after`);
     beforeLabel.classList.toggle('is-hidden', split < 22);
     afterLabel.classList.toggle('is-hidden', split > 78);
   }
@@ -293,17 +277,9 @@ function initComparison() {
     beforeImage.alt = look.before.alt;
     afterImage.src = look.after.src;
     afterImage.alt = look.after.alt;
-    beforeLabel.textContent = look.labels[0];
-    afterLabel.textContent = look.labels[1];
-    document.getElementById('lookKind').textContent = look.kind;
     document.getElementById('lookTitle').textContent = look.title;
     document.getElementById('lookDescription').textContent = look.description;
-    document.getElementById('legendLeft').textContent = look.legend[0];
-    document.getElementById('legendRight').textContent = look.legend[1];
-    const source = document.getElementById('atelierSource');
-    source.href = look.source;
-    source.textContent = `Source: ${look.credit} ↗`;
-    handle.setAttribute('aria-label', `Compare ${look.labels[0]} and ${look.labels[1]}`);
+    handle.setAttribute('aria-label', `Compare ${key} before and after`);
     stage.setAttribute('aria-labelledby', `tab-${key}`);
   }
 
@@ -420,9 +396,9 @@ initComparison();
 
 /* ---------- Client notes ---------- */
 const reviews = [
-  { text: 'I came in wanting a change. I left feeling like I had finally met my own reflection.', name: 'Noor A.', service: 'Colour + finish / London', image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=84', caption: 'Client portrait / Noor' },
-  { text: 'There is a rare kind of calm here. Every detail felt intentional, never rushed, never overdone.', name: 'Elena M.', service: 'Makeup ritual / Brighton', image: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1000&q=84', caption: 'Client portrait / Elena' },
-  { text: 'My hair finally looks like the version I have been trying to describe for years. Soft, strong, completely mine.', name: 'Maya R.', service: 'Cut + movement / Manchester', image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=84', caption: 'Client portrait / Maya' },
+  { text: 'I finally met my own reflection.', name: 'Noor A.', service: 'Soft glam', image: 'assets/makeup-after.jpg', caption: 'Noor' },
+  { text: 'Calm, intentional, never overdone.', name: 'Elena M.', service: 'Gloss + balayage', image: 'assets/hair-after.jpg', caption: 'Elena' },
+  { text: 'Soft, strong, completely mine.', name: 'Maya R.', service: 'Braids + movement', image: 'assets/editorial-0.jpg', caption: 'Maya' },
 ];
 const quoteText = document.getElementById('quoteText');
 const quoteImage = document.getElementById('quoteImage');
@@ -490,6 +466,12 @@ function closeBookingModal() {
   document.body.classList.remove('modal-open');
 }
 openBooking?.addEventListener('click', openBookingModal);
+document.querySelectorAll('[data-open-booking]').forEach((el) => el.addEventListener('click', (e) => {
+  e.preventDefault();
+  navlinks.classList.remove('open');
+  menu.setAttribute('aria-expanded', 'false');
+  openBookingModal();
+}));
 closeBooking?.addEventListener('click', closeBookingModal);
 bookingModal?.querySelectorAll('[data-close-booking]').forEach((el) => el.addEventListener('click', closeBookingModal));
 addEventListener('keydown', (e) => { if (e.key === 'Escape' && bookingModal.classList.contains('open')) closeBookingModal(); });
