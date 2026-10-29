@@ -396,9 +396,11 @@ initComparison();
 
 /* ---------- Client notes ---------- */
 const reviews = [
-  { text: 'Your makeup should still look like you, just refreshed and ready for the occasion.', name: 'MAKEUP', service: 'What to expect', image: 'assets/makeup-card.jpg', caption: 'Makeup inspiration' },
-  { text: 'We start with your hair texture, everyday routine and the result you want to maintain.', name: 'HAIR', service: 'Our approach', image: 'assets/hair-after.jpg', caption: 'Hair inspiration' },
-  { text: 'A considered appointment, a comfortable pace, and details worth taking time over.', name: 'THE RITUAL', service: 'In the chair', image: 'assets/salon-card.jpg', caption: 'The salon experience' },
+  { text: 'I finally met my own reflection.', name: 'Noor A.', service: 'Soft glam', image: 'assets/editorial-1.jpg', caption: 'Noor A.' },
+  { text: 'Calm, intentional, never overdone.', name: 'Elena M.', service: 'Gloss + balayage', image: 'assets/review-portrait-02.jpg', caption: 'Elena M.' },
+  { text: 'Soft, strong, completely mine.', name: 'Maya R.', service: 'Braids + movement', image: 'assets/review-portrait-03.jpg', caption: 'Maya R.' },
+  { text: 'Every detail felt considered, and the finish still felt like me.', name: 'Amara K.', service: 'Signature makeup', image: 'assets/review-portrait-04.jpg', caption: 'Amara K.' },
+  { text: 'I felt listened to from the first consultation. The result was exactly my kind of beautiful.', name: 'Sophie L.', service: 'Signature cut', image: 'assets/makeup-card.jpg', caption: 'Sophie L.' },
 ];
 const quoteText = document.getElementById('quoteText');
 const quoteImage = document.getElementById('quoteImage');
@@ -415,6 +417,8 @@ async function renderReview() {
   document.getElementById('quoteName').textContent = review.name;
   document.getElementById('quoteService').textContent = review.service;
   document.getElementById('quoteImageCaption').textContent = review.caption;
+  document.getElementById('quoteIndex').textContent = `${String(reviewIndex + 1).padStart(2, '0')} / ${String(reviews.length).padStart(2, '0')}`;
+  quoteImage.alt = `Portrait of ${review.caption}`;
   quoteImage.src = review.image;
   quoteText.classList.remove('is-fading');
   quoteImage.classList.remove('is-fading');

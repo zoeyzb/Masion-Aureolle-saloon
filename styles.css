@@ -503,3 +503,98 @@ body.modal-open { overflow: hidden }
 /* Avoid flickering aperture masks on large introductory and review photography. */
 .intro-photo.reveal-media img,.quote-portrait.reveal-media img{clip-path:none!important;transition:opacity .4s ease,filter .4s ease!important}
 .intro-photo img,.quote-portrait img{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+
+/* ---------- Editorial review + considered booking finish ---------- */
+.intro-photo img { object-position: 54% 42%; filter: saturate(.94) contrast(1.02) }
+.intro-inset img { object-position: 50% 25%; filter: saturate(.92) }
+.service-card:nth-child(2) img { object-position: 50% 30% }
+.service-card:nth-child(4) img { object-position: 58% center; filter: saturate(.86) contrast(1.03) }
+.quote-shell { padding: 24px 2.2vw 32px; background: radial-gradient(circle at 10% 40%, #6d4b6524, transparent 35%), var(--night) }
+.quote-section { position: relative; overflow: hidden; background: radial-gradient(circle at 90% 10%, #c793a51c, transparent 34%), linear-gradient(145deg, #17141a 0%, #100e13 58%, #1c151f 100%); color: var(--paper); padding: 72px 0; border: 1px solid #e5dff026; border-radius: 22px; transform-origin: 50% 0; box-shadow: 0 34px 90px -55px #c793a52a, inset 0 1px 0 #ffffff0a }
+.quote-section:before { width: 520px; height: 520px; left: auto; right: -180px; bottom: -300px; background: radial-gradient(circle, #c793a512, transparent 68%) }
+.quote-section .eyebrow { color: var(--rose) }
+.quote-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 32px }
+.quote-heading h2 { font-size: clamp(36px, 4.8vw, 64px); line-height: .95; letter-spacing: -.045em; margin-top: 13px }
+.quote-heading h2 em { color: var(--lilac); font-style: normal }
+.quote-count { font-size: 11px; letter-spacing: .2em; color: var(--soft); padding-bottom: 5px; white-space: nowrap }
+.quote-layout { position: relative; display: grid; grid-template-columns: minmax(180px, .7fr) minmax(150px, .58fr) minmax(0, 1.55fr); gap: 0; align-items: stretch; min-height: 310px; border: 1px solid #e5dff02b; background: linear-gradient(115deg, #ffffff05, #ffffff00 40%, #e5dff008); box-shadow: 0 26px 60px -44px #000; transition: transform .45s var(--ease), box-shadow .45s var(--ease) }
+.quote-layout:hover { transform: translateY(-2px); box-shadow: 0 32px 72px -46px #000 }
+.quote-portrait { position: relative; height: 310px; min-height: 0; max-width: none; aspect-ratio: auto; overflow: hidden; background: #211923; border-right: 1px solid #e5dff024; box-shadow: none }
+.quote-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; filter: saturate(.9) contrast(1.02); transition: opacity .35s ease, transform .8s var(--ease) }
+.quote-portrait img.is-fading { opacity: 0 }
+.quote-layout:hover .quote-portrait img { transform: scale(1.015) }
+.quote-portrait span { position: absolute; z-index: 2; left: 14px; right: auto; bottom: 14px; padding: 7px 9px; background: #0c0b0db8; backdrop-filter: blur(12px); border: 1px solid #ffffff22; color: #fff; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; text-shadow: 0 1px 8px #000 }
+.quote-person { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 26px clamp(18px, 2.2vw, 30px); border-right: 1px solid #e5dff024; min-width: 0 }
+.quote-person-index { font-size: 9px; text-transform: uppercase; letter-spacing: .22em; color: var(--rose); margin-bottom: 22px }
+.quote-person h3 { font-size: clamp(24px, 2.2vw, 32px); line-height: 1; margin-bottom: 10px; color: var(--paper) }
+.quote-service { font-size: 11px; line-height: 1.6; color: var(--soft); max-width: 150px }
+.quote-main { display: flex; flex-direction: column; justify-content: space-between; padding: 27px clamp(22px, 3vw, 44px) 22px; min-width: 0 }
+.quote-main blockquote { font: clamp(25px, 2.55vw, 39px)/1.08 var(--serif); letter-spacing: -.025em; margin: 0 0 24px; max-width: 740px; color: #f4eff6; transition: opacity .3s ease, translate .4s var(--ease) }
+.quote-main blockquote:before { content: "“"; display: block; color: var(--rose); font-size: 1.5em; line-height: .75; margin-bottom: 16px; vertical-align: baseline }
+.quote-main blockquote.is-fading { opacity: 0; translate: 0 8px }
+.quote-by { display: flex; align-items: center; justify-content: space-between; gap: 18px; border-top: 1px solid #e5dff026; padding-top: 15px; max-width: none }
+.quote-byline { font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: #c6bec8 }
+.quote-nav { display: flex; gap: 8px; flex-shrink: 0 }
+.quote-nav button { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid #e5dff05c; border-radius: 3px; background: #e5dff00a; color: var(--lilac); font-size: 18px; line-height: 1; transition: background .22s, color .22s, border-color .22s, transform .22s }
+.quote-nav button:hover { background: var(--rose); border-color: var(--rose); color: var(--night); transform: translateY(-2px) }
+.quote-nav button:focus-visible { outline: 2px solid var(--lilac); outline-offset: 3px }
+.visit { padding: 112px 0 94px }
+.visit-grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr); gap: 7vw; align-items: center }
+.visit-copy h2 { font-size: clamp(54px, 6.6vw, 96px); line-height: .88; letter-spacing: -.055em; margin: 20px 0 26px; max-width: 660px }
+.visit-copy h2 em { padding-left: 4vw }
+.visit-copy p { max-width: 380px; font-size: 14px; line-height: 1.7; margin-bottom: 28px }
+.visit-card { min-height: 400px; transform: rotate(.4deg); border-radius: 2px; box-shadow: 0 36px 90px -52px #c793a533, 0 18px 42px -30px #000 }
+.visit-card:before { inset: 14px; border-color: #e5dff050 }
+.visit-card img { object-position: 60% 45%; opacity: .82; filter: saturate(.78) brightness(.68) contrast(1.04) }
+.visit-overlay { background: linear-gradient(180deg, #0c0b0e40 0%, #0c0b0e20 35%, #0c0b0ed9 100%) }
+.visit-info { min-height: 344px }
+.visit-info p { font-size: clamp(28px, 2.7vw, 40px); max-width: 260px }
+@media (max-width: 900px) {
+  .quote-section { padding: 58px 0 }
+  .quote-layout { grid-template-columns: minmax(150px, .7fr) minmax(0, 1fr) }
+  .quote-portrait { height: 280px }
+  .quote-person { border-right: 0 }
+  .quote-main { grid-column: 1 / -1; border-top: 1px solid #e5dff024; padding: 24px }
+  .quote-main blockquote { font-size: clamp(28px, 4.2vw, 42px) }
+  .visit-grid { grid-template-columns: 1fr 1fr; gap: 34px }
+  .visit-card { min-height: 370px }
+  .visit-info { min-height: 318px }
+}
+@media (max-width: 620px) {
+  .quote-shell { padding: 18px 3vw 24px }
+  .quote-section { padding: 38px 0 30px; border-radius: 16px }
+  .quote-heading { align-items: end; margin-bottom: 22px; gap: 12px }
+  .quote-heading h2 { font-size: clamp(31px, 9vw, 44px) }
+  .quote-count { font-size: 9px; letter-spacing: .12em }
+  .quote-layout { grid-template-columns: 110px minmax(0, 1fr) }
+  .quote-portrait { height: 152px; border-right: 1px solid #e5dff024 }
+  .quote-portrait span { left: 7px; bottom: 7px; padding: 5px 6px; font-size: 8px; letter-spacing: .08em }
+  .quote-person { padding: 10px 12px; justify-content: center }
+  .quote-person-index { font-size: 8px; margin-bottom: 12px; letter-spacing: .15em }
+  .quote-person h3 { font-size: 24px; margin-bottom: 6px }
+  .quote-service { font-size: 10px }
+  .quote-main { grid-column: 1 / -1; padding: 20px 16px 14px }
+  .quote-main blockquote { font-size: clamp(26px, 7.2vw, 34px); line-height: 1.1; margin-bottom: 20px }
+  .quote-main blockquote:before { font-size: 1.3em; margin-bottom: 10px }
+  .quote-by { display: flex; gap: 10px; align-items: center }
+  .quote-byline { font-size: 8px; letter-spacing: .1em; max-width: 125px; line-height: 1.5 }
+  .quote-nav { margin: 0 }
+  .quote-nav button { width: 40px; height: 40px }
+  .visit { padding: 80px 0 72px }
+  .visit-grid { grid-template-columns: 1fr; gap: 34px }
+  .visit-copy h2 { font-size: clamp(50px, 14vw, 72px); line-height: .9 }
+  .visit-copy h2 em { padding-left: 0 }
+  .visit-card { min-height: 360px; max-width: none; transform: none; padding: 20px }
+  .visit-info { min-height: 318px }
+}
+
+
+/* Keep editorial headings intentional and anchor targets clear beneath the fixed navigation. */
+main section[id] { scroll-margin-top: 88px }
+.intro-copy h2 { font-size: clamp(46px, 4.8vw, 72px); line-height: .94; letter-spacing: -.045em }
+.service-card:nth-child(4) img { object-position: 38% center }
+.visit-card img { object-position: 58% 42% }
+@media (max-width: 620px) {
+  main section[id] { scroll-margin-top: 76px }
+  .intro-copy h2 { font-size: clamp(42px, 11vw, 54px); line-height: .92 }
+}
