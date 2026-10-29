@@ -43,3 +43,17 @@ test('booking tests stay outside Vercel’s serverless API directory', () => {
   assert.equal(existsSync(new URL('./api/booking.test.mjs', import.meta.url)), false);
   assert.equal(existsSync(new URL('./tests/booking.test.mjs', import.meta.url)), true);
 });
+
+test('hero trust strip makes the existing salon credentials visible above the fold', () => {
+  const hero = html.match(/<section class="hero"[\s\S]*?<\/section>/);
+  assert.ok(hero, 'the hero section exists');
+  assert.match(hero[0], /class="hero-trust"[^>]*aria-label="Why clients choose Maison Aurelle"/);
+  for (const claim of ['12 Years of Craft', '4.9<span class="trust-rating-star" aria-hidden="true">★</span> Client Rating', '1:1 Private Chair', 'By Appointment Only']) {
+    assert.ok(hero[0].includes(claim), `trust strip should include ${claim}`);
+  }
+  assert.equal((hero[0].match(/class="trust-item"/g) || []).length, 4, 'four balanced trust points should appear');
+  assert.doesNotMatch(hero[0], /1,000\+|sample|placeholder/i, 'do not invent client-count or sample claims');
+  const css = readFileSync(new URL('./styles.css', import.meta.url), 'utf8');
+  assert.match(css, /\.hero-trust[\s\S]*?backdrop-filter/i, 'the trust strip should have a premium glass finish');
+  assert.match(css, /@media \(max-width: 620px\)[\s\S]*?\.hero-trust[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/i, 'the trust strip should adapt to two columns on phones');
+});
