@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import handler from './booking.js';
+import handler from '../api/booking.js';
 
 const futureDate = new Date(Date.now() + 3 * 86400000).toISOString().slice(0, 10);
 const valid = {

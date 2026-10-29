@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 
 const html = readFileSync(new URL('./index.html', import.meta.url), 'utf8');
 const script = readFileSync(new URL('./main.js', import.meta.url), 'utf8');
@@ -36,4 +36,10 @@ test('the closing section has a clear booking invitation and local portrait', ()
   assert.ok(visit, 'the closing booking section exists');
   assert.match(visit[0], /src="assets\/booking-ritual\.jpg"/);
   assert.doesNotMatch(visit[0], /images\.unsplash\.com/);
+});
+
+
+test('booking tests stay outside Vercel’s serverless API directory', () => {
+  assert.equal(existsSync(new URL('./api/booking.test.mjs', import.meta.url)), false);
+  assert.equal(existsSync(new URL('./tests/booking.test.mjs', import.meta.url)), true);
 });
